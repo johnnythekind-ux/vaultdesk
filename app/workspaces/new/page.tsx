@@ -38,6 +38,17 @@ export default function NewWorkspacePage() {
 
   return (
     <main style={{ padding: "2rem", maxWidth: "700px", margin: "0 auto" }}>
+        <a
+  href="/workspaces"
+  style={{
+    color: "#aaa",
+    textDecoration: "underline",
+    display: "inline-block",
+    marginBottom: "1.5rem",
+  }}
+>
+  ← Back to Workspaces
+</a>
       <h1>Create Workspace</h1>
 
       <p style={{ marginTop: "0.5rem", color: "#666" }}>

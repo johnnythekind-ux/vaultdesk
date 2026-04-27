@@ -34,6 +34,17 @@ export default async function WorkspacesPage() {
           gap: "1rem",
         }}
       >
+        <Link
+  href="/dashboard"
+  style={{
+    color: "#aaa",
+    textDecoration: "underline",
+    display: "inline-block",
+    marginBottom: "1.5rem",
+  }}
+>
+  ← Back to Dashboard
+</Link>
         <div>
           <h1>My Workspaces</h1>
           <p style={{ marginTop: "0.5rem", color: "#666" }}>
