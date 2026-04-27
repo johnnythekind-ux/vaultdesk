@@ -54,9 +54,14 @@ export default function Header() {
           {userEmail ? (
             <>
               <Link href="/dashboard" className="text-sm">
-                Dashboard
-              </Link>
-              <button
+  Dashboard
+</Link>
+
+<Link href="/workspaces" className="text-sm">
+  Workspaces
+</Link>
+
+<button
                 onClick={handleLogout}
                 className="text-sm border border-white px-4 py-2 rounded"
               >
