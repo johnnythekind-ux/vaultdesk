@@ -31,6 +31,33 @@ export default async function WorkspaceDetailPage({
     notFound();
   }
 
+  async function deleteWorkspace() {
+  "use server";
+
+  const supabase = await createClient();
+
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
+
+  if (userError || !user) {
+    redirect("/login");
+  }
+
+  const { error } = await supabase
+    .from("workspaces")
+    .delete()
+    .eq("id", id)
+    .eq("user_id", user.id);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  redirect("/workspaces");
+}
+
   return (
     <main style={{ padding: "2rem", maxWidth: "800px", margin: "0 auto" }}>
       <Link href="/workspaces" style={{ color: "#aaa", textDecoration: "underline" }}>
@@ -66,6 +93,23 @@ export default async function WorkspaceDetailPage({
 >
   Edit Workspace
 </Link>
+
+<form action={deleteWorkspace}>
+  <button
+    type="submit"
+    style={{
+      marginTop: "1rem",
+      padding: "0.75rem 1rem",
+      border: "1px solid red",
+      background: "transparent",
+      color: "red",
+      cursor: "pointer",
+      borderRadius: "8px",
+    }}
+  >
+    Delete Workspace
+  </button>
+</form>
 
       </section>
     </main>
