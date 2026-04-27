@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import DeleteWorkspaceButton from "@/components/DeleteWorkspaceButton";
 
 export default async function WorkspaceDetailPage({
   params,
@@ -95,20 +96,7 @@ export default async function WorkspaceDetailPage({
 </Link>
 
 <form action={deleteWorkspace}>
-  <button
-    type="submit"
-    style={{
-      marginTop: "1rem",
-      padding: "0.75rem 1rem",
-      border: "1px solid red",
-      background: "transparent",
-      color: "red",
-      cursor: "pointer",
-      borderRadius: "8px",
-    }}
-  >
-    Delete Workspace
-  </button>
+  <DeleteWorkspaceButton />
 </form>
 
       </section>
