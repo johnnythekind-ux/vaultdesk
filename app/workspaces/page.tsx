@@ -64,6 +64,12 @@ export default async function WorkspacesPage({
   </p>
 )}
 
+{success === "deleted" && (
+  <p style={{ color: "limegreen", marginTop: "1rem" }}>
+    Workspace deleted successfully.
+  </p>
+)}
+
         <Link
           href="/workspaces/new"
           style={{

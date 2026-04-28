@@ -59,7 +59,7 @@ export default async function WorkspaceDetailPage({
     throw new Error(error.message);
   }
 
-  redirect("/workspaces");
+  redirect("/workspaces?success=deleted");
 }
 
   return (
