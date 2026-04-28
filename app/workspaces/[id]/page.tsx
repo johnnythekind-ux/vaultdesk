@@ -5,10 +5,13 @@ import DeleteWorkspaceButton from "@/components/DeleteWorkspaceButton";
 
 export default async function WorkspaceDetailPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ success?: string }>;
 }) {
   const { id } = await params;
+  const { success } = await searchParams;
 
   const supabase = await createClient();
 
@@ -61,6 +64,11 @@ export default async function WorkspaceDetailPage({
 
   return (
     <main style={{ padding: "2rem", maxWidth: "800px", margin: "0 auto" }}>
+        {success === "updated" && (
+  <p style={{ color: "limegreen", marginBottom: "1rem" }}>
+    Workspace updated successfully.
+  </p>
+)}
       <Link href="/workspaces" style={{ color: "#aaa", textDecoration: "underline" }}>
         ← Back to Workspaces
       </Link>
