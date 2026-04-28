@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { redirect, notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import SubmitButton from "@/components/SubmitButton";
 
 export default async function EditWorkspacePage({
   params,
@@ -32,33 +33,42 @@ export default async function EditWorkspacePage({
   }
 
   async function updateWorkspace(formData: FormData) {
-    "use server";
+  "use server";
 
-    const supabase = await createClient();
+  const supabase = await createClient();
 
-    const name = formData.get("name") as string;
-    const description = formData.get("description") as string;
+  const {
+    data: { user: currentUser },
+    error: userError,
+  } = await supabase.auth.getUser();
 
-    if (!name || name.trim().length === 0) {
-      throw new Error("Workspace name is required.");
-    }
-
-    const { error } = await supabase
-      .from("workspaces")
-      .update({
-        name: name.trim(),
-        description: description?.trim() || null,
-        updated_at: new Date().toISOString(),
-      })
-      .eq("id", id)
-      .eq("user_id", user.id);
-
-    if (error) {
-      throw new Error(error.message);
-    }
-
-    redirect(`/workspaces/${id}`);
+  if (userError || !currentUser) {
+    redirect("/login");
   }
+
+  const name = formData.get("name") as string;
+  const description = formData.get("description") as string;
+
+  if (!name || name.trim().length === 0) {
+    throw new Error("Workspace name is required.");
+  }
+
+  const { error } = await supabase
+    .from("workspaces")
+    .update({
+      name: name.trim(),
+      description: description?.trim() || null,
+      updated_at: new Date().toISOString(),
+    })
+    .eq("id", id)
+    .eq("user_id", currentUser.id);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  redirect(`/workspaces/${id}`);
+}
 
   return (
     <main style={{ padding: "2rem", maxWidth: "700px", margin: "0 auto" }}>
@@ -109,20 +119,10 @@ export default async function EditWorkspacePage({
           />
         </label>
 
-        <button
-          type="submit"
-          style={{
-            padding: "0.85rem 1rem",
-            border: "none",
-            borderRadius: "8px",
-            background: "white",
-            color: "black",
-            cursor: "pointer",
-            fontWeight: "bold",
-          }}
-        >
-          Save Changes
-        </button>
+        <SubmitButton
+  idleText="Save Changes"
+  pendingText="Saving..."
+/>
       </form>
     </main>
   );

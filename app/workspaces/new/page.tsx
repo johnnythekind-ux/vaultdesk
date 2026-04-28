@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import SubmitButton from "@/components/SubmitButton";
 
 export default function NewWorkspacePage() {
   async function createWorkspace(formData: FormData) {
@@ -93,20 +94,7 @@ export default function NewWorkspacePage() {
           />
         </label>
 
-        <button
-          type="submit"
-          style={{
-            padding: "0.85rem 1rem",
-            border: "none",
-            borderRadius: "8px",
-            background: "black",
-            color: "white",
-            cursor: "pointer",
-            fontWeight: "bold",
-          }}
-        >
-          Create Workspace
-        </button>
+        <SubmitButton idleText="Create Workspace" pendingText="Creating..." />
 
         <a
   href="/workspaces"

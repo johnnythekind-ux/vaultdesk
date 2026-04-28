@@ -70,18 +70,36 @@ export default async function WorkspacesPage() {
       <section style={{ marginTop: "2rem" }}>
         {!workspaces || workspaces.length === 0 ? (
           <div
-            style={{
-              border: "1px solid #ddd",
-              borderRadius: "12px",
-              padding: "2rem",
-              textAlign: "center",
-            }}
-          >
-            <h2>No workspaces yet</h2>
-            <p style={{ color: "#666", marginTop: "0.5rem" }}>
-              Create your first workspace to start organizing your records.
-            </p>
-          </div>
+  style={{
+    border: "1px solid #333",
+    borderRadius: "12px",
+    padding: "2rem",
+    textAlign: "center",
+  }}
+>
+  <p style={{ marginBottom: "1rem", color: "#aaa" }}>
+    No workspaces yet
+  </p>
+
+  <p style={{ marginBottom: "1.5rem", color: "#666" }}>
+    Create your first workspace to start organizing your records.
+  </p>
+
+  <a
+    href="/workspaces/new"
+    style={{
+      display: "inline-block",
+      padding: "0.75rem 1.25rem",
+      background: "black",
+      color: "white",
+      borderRadius: "8px",
+      textDecoration: "none",
+      fontWeight: "bold",
+    }}
+  >
+    Create Workspace
+  </a>
+</div>
         ) : (
           <div style={{ display: "grid", gap: "1rem" }}>
             {workspaces.map((workspace) => (
