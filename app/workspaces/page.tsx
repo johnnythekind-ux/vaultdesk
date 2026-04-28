@@ -94,12 +94,14 @@ export default async function WorkspacesPage() {
   }}
 >
   <article
-    style={{
-      border: "1px solid #ddd",
-      borderRadius: "12px",
-      padding: "1.25rem",
-    }}
-  >
+  style={{
+    border: "1px solid #ddd",
+    borderRadius: "12px",
+    padding: "1.25rem",
+    cursor: "pointer",
+    transition: "border-color 0.2s ease, transform 0.2s ease",
+  }}
+>
     <h2 style={{ marginBottom: "0.5rem" }}>
       {workspace.name}
     </h2>
