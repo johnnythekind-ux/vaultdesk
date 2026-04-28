@@ -67,7 +67,7 @@ export default async function EditWorkspacePage({
     throw new Error(error.message);
   }
 
-  redirect(`/workspaces/${id}`);
+  redirect(`/workspaces/${id}?success=updated`);
 }
 
   return (

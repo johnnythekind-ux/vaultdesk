@@ -34,7 +34,7 @@ export default function NewWorkspacePage() {
       throw new Error(error.message);
     }
 
-    redirect("/workspaces");
+    redirect("/workspaces?success=created");
   }
 
   return (

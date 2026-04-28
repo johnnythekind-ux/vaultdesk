@@ -2,7 +2,13 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 
-export default async function WorkspacesPage() {
+export default async function WorkspacesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ success?: string }>;
+}) {
+  const { success } = await searchParams;
+
   const supabase = await createClient();
 
   const {
@@ -51,6 +57,12 @@ export default async function WorkspacesPage() {
             Manage your secure VaultDesk workspaces.
           </p>
         </div>
+
+        {success === "created" && (
+  <p style={{ color: "green", marginTop: "1rem" }}>
+    Workspace created successfully.
+  </p>
+)}
 
         <Link
           href="/workspaces/new"
