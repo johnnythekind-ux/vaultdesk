@@ -6,8 +6,8 @@ export default function DeleteWorkspaceButton() {
       type="submit"
       onClick={(e) => {
         const confirmed = window.confirm(
-          "Are you sure you want to delete this workspace?"
-        );
+  "This will permanently delete the workspace. This action cannot be undone.\n\nAre you sure?"
+);
 
         if (!confirmed) {
           e.preventDefault();

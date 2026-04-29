@@ -26,7 +26,7 @@ export default async function WorkspaceDetailPage({
 
   const { data: workspace, error } = await supabase
     .from("workspaces")
-    .select("id, name, description, created_at")
+    .select("id, name, description, created_at, updated_at")
     .eq("id", id)
     .eq("user_id", user.id)
     .single();
@@ -81,7 +81,10 @@ export default async function WorkspaceDetailPage({
           padding: "2rem",
         }}
       >
-        <h1>{workspace.name}</h1>
+        <p style={{ color: "#666", fontSize: "0.8rem", marginBottom: "0.25rem" }}>
+  Workspace
+</p>
+        <h1 style={{ marginTop: "0.5rem" }}>{workspace.name}</h1>
 
         <p style={{ marginTop: "1rem", color: "#aaa" }}>
           {workspace.description || "No description provided."}
@@ -90,6 +93,10 @@ export default async function WorkspaceDetailPage({
         <p style={{ marginTop: "1.5rem", fontSize: "0.875rem", color: "#888" }}>
           Created: {new Date(workspace.created_at).toLocaleString()}
         </p>
+
+        <p style={{ marginTop: "0.5rem", fontSize: "0.8rem", color: "#666" }}>
+  Last updated: {new Date(workspace.updated_at || workspace.created_at).toLocaleString()}
+</p>
 
         <Link
   href={`/workspaces/${id}/edit`}

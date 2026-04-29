@@ -93,13 +93,12 @@ export default async function WorkspacesPage({
     borderRadius: "12px",
     padding: "2rem",
     textAlign: "center",
+    marginTop: "2rem",
   }}
 >
-  <p style={{ marginBottom: "1rem", color: "#aaa" }}>
-    No workspaces yet
-  </p>
+  <h2 style={{ marginBottom: "0.5rem" }}>No workspaces yet</h2>
 
-  <p style={{ marginBottom: "1.5rem", color: "#666" }}>
+  <p style={{ color: "#777", marginBottom: "1.5rem" }}>
     Create your first workspace to start organizing your records.
   </p>
 
