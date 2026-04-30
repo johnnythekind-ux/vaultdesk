@@ -1,6 +1,21 @@
+## 🌐 Live Demo
+https://vaultdesk-two.vercel.app
+
+## 💻 GitHub Repo
+https://github.com/johnnythekind-ux/vaultdesk
+
 # VaultDesk
 
-VaultDesk is a full-stack workspace management application that allows users to securely create, organize, and manage personal records using an authenticated, database-driven system.
+VaultDesk is a secure client workspace system built with Next.js and Supabase. 
+It allows users to authenticate, create, manage, and delete private workspaces 
+with full route protection and production-ready authentication flows.
+
+This project demonstrates full-stack application architecture including:
+- Authentication (Supabase Auth with email verification)
+- Protected routes
+- CRUD operations with database persistence
+- Deployment on Vercel
+- Clean UI/UX with real-world functionality
 
 ## 🚀 Overview
 
@@ -43,28 +58,41 @@ This project showcases the ability to:
 
 ---
 
-## 🛠 Tech Stack
+## ⚙️ Tech Stack
 
-- **Frontend:** Next.js (App Router)
-- **Backend:** Next.js Server Actions / API Routes
-- **Database:** Supabase (PostgreSQL)
-- **Authentication:** Supabase Auth
-- **Hosting:** Vercel
+- Next.js (App Router)
+- Supabase (Auth + Database)
+- TypeScript
+- Tailwind CSS
+- Vercel (Deployment)
 
 ---
 
 ## 📸 Screenshots
 
-_(Add screenshots here once captured)_
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
 
-Examples to include:
-- Dashboard
-- Workspaces list
-- Empty state
-- Create workspace form
-- Workspace detail page
-- Edit page
-- Delete confirmation
+### Workspaces List
+![Workspaces](./screenshots/workspaces.png)
+
+### Empty State
+![Empty State](./screenshots/empty-state.png)
+
+### Create Workspace
+![Create Workspace](./screenshots/create-workspace.png)
+
+### Edit Workspace
+![Edit Workspace](./screenshots/edit-workspace.png)
+
+### Workspace Detail
+![Workspace Detail](./screenshots/workspace-detail.png)
+
+### Delete Confirmation
+![Delete Confirmation](./screenshots/delete-confirmation.png)
+
+### Post Delete State
+![Post Delete](./screenshots/post-delete-state.png)
 
 ---
 
