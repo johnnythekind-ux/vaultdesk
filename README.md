@@ -12,15 +12,15 @@ This project was built to demonstrate real-world SaaS fundamentals: protected ro
 
 ## 🚀 Overview
 
-VaultDesk demonstrates a complete implementation of:
+VaultDesk is built around a core SaaS pattern:
 
-- User authentication
-- Secure, user-scoped data access
-- Full CRUD operations (Create, Read, Update, Delete)
-- Server-side data handling with Next.js
-- Supabase database integration with Row Level Security (RLS)
+**Auth → User → Data → CRUD → Feedback**
 
-Each user can create and manage their own workspaces, ensuring all data is isolated and protected.
+Users authenticate via Supabase, which establishes identity and enables secure, user-scoped queries. Every database operation is filtered at the row level using RLS (Row Level Security), ensuring strict data isolation.
+
+The application supports full CRUD workflows on workspace records, with server-side handling through Next.js and real-time UI feedback for user actions (create, update, delete).
+
+This structure mirrors production-grade application design, where authentication, authorization, and data ownership are tightly enforced across the system.
 
 ---
 
