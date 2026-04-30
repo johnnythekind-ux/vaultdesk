@@ -26,14 +26,14 @@ This structure mirrors production-grade application design, where authentication
 
 ## ✨ Features
 
-- 🔐 Secure user authentication (Supabase Auth)
-- 🧱 Workspace management (Create, View, Edit, Delete)
-- 🔒 Row-level data protection (user-specific access)
-- 💬 Success feedback messaging (create, update, delete)
-- ⚠️ Delete confirmation safeguards
-- 📦 Clean UI with structured user flow
-- 🧭 Guided empty state for better UX
-- 🕒 Created + Last Updated timestamps
+- 🔐 **Authentication System** — Supabase Auth with protected routes and session handling  
+- 🧱 **Workspace CRUD Engine** — Full create, read, update, delete lifecycle for user-owned data  
+- 🔒 **Data Isolation (RLS)** — Every query scoped to the authenticated user via Row Level Security  
+- ⚙️ **Server-Side Logic** — Next.js server actions handle secure data operations  
+- 💬 **UX Feedback System** — Real-time success messaging for user actions  
+- ⚠️ **Destructive Action Safeguards** — Confirmation modal prevents accidental deletes  
+- 🧭 **State-Aware UI** — Handles empty, populated, and post-action states cleanly  
+- 🕓 **Audit-Friendly Data** — Created and updated timestamps for tracking changes  
 
 ---
 
