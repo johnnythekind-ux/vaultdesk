@@ -144,18 +144,26 @@ This ensures users can only access their own data.
 
 ---
 
-## 🔄 System Pattern
+## 🔁 System Pattern
 
-This project follows a reusable architecture pattern:
+This project is built using a reusable SaaS architecture pattern:
 
-Auth → User → Data → CRUD → Redirect → Feedback
+**Auth → Identity → Data Access → CRUD Operations → UI Feedback**
 
-This pattern can be reused to build additional modules such as:
+- **Auth** — Supabase handles authentication and session management  
+- **Identity** — Each request is tied to a verified user  
+- **Data Access** — Queries are scoped using Row Level Security (RLS)  
+- **CRUD Operations** — Users perform actions on their own records only  
+- **UI Feedback** — The interface reflects success, failure, and state changes in real time  
 
-- Deals
-- Reports
-- Contracts
-- Notes
+This pattern is intentionally modular and can be extended into additional systems such as:
+
+- Deal pipelines  
+- Report generation systems (e.g., ReportForge)  
+- Contract management tools  
+- CRM-style data tracking modules  
+
+It reflects how scalable SaaS products are structured — with clear separation between authentication, data ownership, and user interaction layers.
 
 ---
 
