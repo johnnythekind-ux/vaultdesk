@@ -39,15 +39,16 @@ This structure mirrors production-grade application design, where authentication
 
 ## 🧠 What This Project Demonstrates
 
-This project showcases the ability to:
+This project demonstrates real-world full-stack engineering capability, including:
 
-- Build a full-stack application using modern frameworks
-- Implement secure authentication and session handling
-- Design and manage relational database structures
-- Enforce user-specific data access using RLS
-- Connect frontend UI with backend logic using server actions
-- Handle complete CRUD workflows with proper UX feedback
-- Structure applications using reusable system patterns
+- 🧱 **End-to-End System Design** — Building a complete flow from authentication to database persistence to UI feedback  
+- 🔐 **Security-First Thinking** — Enforcing user-level data isolation using Supabase Row Level Security (RLS)  
+- ⚙️ **Backend + Frontend Integration** — Connecting Next.js server actions with a reactive UI layer  
+- 📊 **State Management Awareness** — Handling loading, success, empty, and destructive states cleanly  
+- 🧩 **Reusable Architecture Patterns** — Applying a repeatable SaaS structure (Auth → Data → CRUD → Feedback)  
+- 🚀 **Production Deployment Readiness** — Structuring the app for deployment on Vercel with environment configuration  
+
+This is not a tutorial-style build — it reflects how modern SaaS applications are actually structured in production environments.
 
 ---
 
