@@ -6,16 +6,9 @@ https://github.com/johnnythekind-ux/vaultdesk
 
 # VaultDesk
 
-VaultDesk is a secure client workspace system built with Next.js and Supabase. 
-It allows users to authenticate, create, manage, and delete private workspaces 
-with full route protection and production-ready authentication flows.
+VaultDesk is a secure workspace management application built with Next.js, Supabase, and Vercel. It gives authenticated users a private place to create, view, update, and delete workspace records while keeping each user’s data isolated.
 
-This project demonstrates full-stack application architecture including:
-- Authentication (Supabase Auth with email verification)
-- Protected routes
-- CRUD operations with database persistence
-- Deployment on Vercel
-- Clean UI/UX with real-world functionality
+This project was built to demonstrate real-world SaaS fundamentals: protected routes, Supabase authentication, database-backed CRUD operations, user-scoped data access, production deployment, and clean UI feedback.
 
 ## 🚀 Overview
 
