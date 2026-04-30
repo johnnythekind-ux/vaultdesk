@@ -52,6 +52,16 @@ This is not a tutorial-style build — it reflects how modern SaaS applications 
 
 ---
 
+## 🧠 Key Engineering Decisions
+
+- **Used Supabase RLS instead of client-side filtering** to enforce true data isolation at the database level
+- **Handled mutations server-side** using Next.js to avoid putting sensitive data logic in the browser
+- **Scoped every workspace query to the authenticated user** to prevent cross-user data access
+- **Designed around a reusable SaaS pattern**: Auth → Identity → Data Access → CRUD → UI Feedback
+- **Prioritized real UX states** including empty states, success messages, and delete confirmation
+
+---
+
 ## ⚙️ Tech Stack
 
 - Next.js (App Router)
